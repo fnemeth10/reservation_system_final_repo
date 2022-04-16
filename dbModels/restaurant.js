@@ -23,6 +23,6 @@ const restSchema = new mongoose.Schema({
     day:Date,
     phone_num: Number
 });
-const Restaurant = mongoose.model('Restaurant',restSchema);
+var Restaurant = mongoose.model('Restaurant',restSchema);
 module.exports.model = Restaurant;
 module.exports.schema = restSchema;
