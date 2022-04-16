@@ -15,7 +15,7 @@ const tableSchema = new mongoose.Schema({
     table_name: String
 });
 
-const Table = mongoose.model('Table',tableSchema);
+var Table = mongoose.model('Table',tableSchema);
 
 module.exports.model = Table;
 module.exports.schema = tableSchema;

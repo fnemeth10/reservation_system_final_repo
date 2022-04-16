@@ -3,7 +3,7 @@ This is how to push
     git init
 2. after that do:
     git add files
-        -files is the name of the files
+        -files is the name of the file
         -an example of this files is git add testingPush.md
     multiple files is:
         - git add file1 file2
