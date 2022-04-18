@@ -21,6 +21,7 @@ const restSchema = new mongoose.Schema({
         */
     },
     day:Date,
+    restaurantName: String,
     phone_num: Number
 });
 var Restaurant = mongoose.model('Restaurant',restSchema);
