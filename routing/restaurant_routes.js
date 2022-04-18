@@ -3,7 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 
 
-var Reservation = require("../dbModels/reservation").model;
+const Reservation = require("../dbModels/reservation").model;
 
   
 
