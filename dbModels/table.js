@@ -4,15 +4,13 @@ var mongoose = require("mongoose");
 const restSchema = require("./restaurant").schema;
 
 const tableSchema = new mongoose.Schema({
-    // tableID:{
-    //     type: mongoose.ObjectId, required:true
-    // },
     restID: {
         required: true,
         type: restSchema
     },
     seats: Number,
-    table_name: String
+    table_name: String,
+    isAvailable: Boolean
 });
 
 var Table = mongoose.model('Table',tableSchema);
