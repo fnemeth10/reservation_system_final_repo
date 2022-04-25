@@ -5,18 +5,18 @@ let dbManager = require('..dbTestingWork/dbManager');
 
 const User = require("../dbModels/user").model;
 
-router.get("/LoginBox/:userName/:Password", function(req, res){
+router.get("/LoginBox/:Username/:Password", function(req, res){
     try {
         let user = User.findOne({
           where: {
-            username: req.body.userName
+            username: req.body.Username
           }
         });
     
         if (user) {
           let password = User.findOne({
               where: {
-                  password: req.body.password
+                  password: req.body.Password
               }
           })
           if(password){
