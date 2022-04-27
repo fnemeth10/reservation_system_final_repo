@@ -11,7 +11,7 @@ let dbManager = require('../dbTestingWork/dbManager');
 
 const User = require("../dbModels/user").model;
 
-router.post("/login/:Username/:Password", async function(req, res){
+router.get("/login/:Username/:Password", async function(req, res){
     try {
         let user = await User.findOne({
           where: {

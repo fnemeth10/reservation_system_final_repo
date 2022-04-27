@@ -15,12 +15,7 @@ const Restaurant = require('../dbModels/restaurant').model;
 const Table = require('../dbModels/table').model;
 const User = require('../dbModels/user').model;
 
-router.post('/', (req, res, next) => {
-    res.send("REQUEST MADE");
-    
-    
-});
-
+router.get()
 
 
 module.exports = router;

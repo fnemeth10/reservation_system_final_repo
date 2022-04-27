@@ -9,15 +9,34 @@ const http = require('http');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 
-const Reservation = require('../dbModels/reservation').model;
-const Restaurant = require('../dbModels/restaurant').model;
-const Table = require('../dbModels/table').model;
+// const Reservation = require('../dbModels/reservation').model;
+// const Restaurant = require('../dbModels/restaurant').model;
+// const Table = require('../dbModels/table').model;
+
 const User = require('../dbModels/user').model;
 
-router.post("/", function(req, res, next){
-    console.log("REQUEST MADE");
-    console.log("");
-});
+router.post("CreatingAccount", async function(req, res) {
+    try{
 
+        let user = await User.create({
+            
+            name:{
+                firstName:req.body.firstName,
+                lastName:req.body.lastName
+            },
+            userName: req.body.userName,
+            email: req.body.email,
+            password: req.body.password,
+            phone_num: req.body.phone_num,
+            owner: req.body.owner
+
+        })
+        res.send("Account created successfully!")
+    }
+    
+    catch(e){
+        res.status(404).send("Account not created due to an unknown error!");
+    }
+})
 
 module.exports = router;

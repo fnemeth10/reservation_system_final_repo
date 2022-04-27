@@ -7,14 +7,17 @@ let express = require('express')
 // let app = require('../Restaurant-Reservation/api/app')
 const mongoose = require('mongoose')
 const app = express();
+const dbManager = require("./dbTestingWork/dbManager")
+
 
 app.use('/routing', require('./routing/login'))
 
 mongoose.Promise = global.Promise
-mongoose.connect("mongodb://127.0.0.1:27017/testDB", {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true})
-mongoose.connection.on('error', () => {
-    throw new Error(`unable to connect to database: `)
-})
+mongoose.connect("mongodb://localhost:27017/", {useNewUrlParser: true, useUnifiedTopology: true})
+// mongoose.connection.on('error', () => {
+//     throw new Error(`unable to connect to database: `)
+// })
+
 
 app.listen(3000, (err) => {
     if (err) {console.log(err)}
