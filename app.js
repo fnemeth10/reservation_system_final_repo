@@ -10,26 +10,8 @@ const mongoose = require('mongoose')
 const app = express();
 const dbManager = require("./dbTestingWork/dbManager")
 
-let bp = require('body-parser');
-let session = require('express-session');
-let crypto = require('crypto');
-function genHash(input){
-    return Buffer.from(crypto.createHash('sha256').update(input).digest('base32')).toString('hex').toUpperCase();
-}
 
-app.use(session({
-	secret:'shhhhh',
-	saveUninitialized: false,
-	resave: false
-}));
-app.get("/",function(res,req){
-    if (!req.session.user){
-        res.redirect('/login');
-    }
-    else{
-    	res.render('NavBar', {trusted: req.session.user});
-	}
-});
+
 
 app.use('/login', require('./routing/login'))
 app.use('/AskingInfo', require("./routing/make_reservation"))
